@@ -1,13 +1,19 @@
 <template>
   <v-app id="app">
-    <v-btn>Test</v-btn>
     <h1>HOME</h1>
+    <group-index/>
   </v-app>
 
 </template>
 
 <script>
+  import GroupIndex from '../components/GroupIndex.vue'
 
+  export default {
+    components: {
+      GroupIndex
+    }
+  }
 </script>
 
 <style scoped>
