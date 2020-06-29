@@ -3,15 +3,18 @@
     <p>{{ group.name }}</p>
 
     <group-join/>
+    <invites/>
   </div>
 </template>
 
 <script>
   import axios from 'axios';
+  import Invites from '../components/Invites.vue'
   import GroupJoin from '../components/GroupJoin.vue'
 
   export default {
     components: {
+      Invites,
       GroupJoin
     },
     data: function () {

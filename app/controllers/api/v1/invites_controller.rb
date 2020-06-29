@@ -4,6 +4,10 @@ module Api
       before_action :authenticate_user!
       before_action :set_invite, only: [:show, :destroy]
 
+      def index
+        invites = Invite.where(group_id: params[:id])
+        render json: invites
+      end
 
       def create 
         @invite = Invite.new(invite_params)
