@@ -42,7 +42,7 @@
 
     <v-app-bar
       app
-      color="red lighten-1"
+      color="blue-grey darken-1"
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
