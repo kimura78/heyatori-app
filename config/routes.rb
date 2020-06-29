@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :groups
       resources :invites
       resources :users
+      resources :rooms
     end
   end
 end
