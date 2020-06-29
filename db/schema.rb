@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_29_140343) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.date "day", null: false
+    t.string "day", default: "", null: false
     t.bigint "user_id"
     t.bigint "group_id"
     t.datetime "created_at", null: false
