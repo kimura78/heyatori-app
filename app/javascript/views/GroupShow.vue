@@ -1,11 +1,19 @@
 <template>
-  <p>{{ group.name }}</p>
+  <div>
+    <p>{{ group.name }}</p>
+
+    <group-join/>
+  </div>
 </template>
 
 <script>
   import axios from 'axios';
+  import GroupJoin from '../components/GroupJoin.vue'
 
   export default {
+    components: {
+      GroupJoin
+    },
     data: function () {
       return {
         group: []

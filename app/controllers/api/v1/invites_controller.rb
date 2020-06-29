@@ -2,7 +2,7 @@ module Api
   module V1
     class InvitesController < ApiController
       before_action :authenticate_user!
-      before_action :set_invite, only: [:show, :update, :destroy]
+      before_action :set_invite, only: [:show, :destroy]
 
 
       def create 
@@ -10,14 +10,6 @@ module Api
         @invite.user_id = current_user.id
         if @invite.save
           render json: @invite, status: :created
-        else
-          render json: { errors: @invite.errors.full_messages }, status: :unprocessable_entity
-        end
-      end
-
-      def update
-        if @invite.update_attributes(invite_params)
-          head :no_content
         else
           render json: { errors: @invite.errors.full_messages }, status: :unprocessable_entity
         end

@@ -9,10 +9,23 @@ import Vue from 'vue'
 import App from '../app.vue'
 import Router from '../router/router.js'
 import Vuetify from "vuetify";
+import colors from 'vuetify/lib/util/colors'
 import "vuetify/dist/vuetify.min.css"; 
 
 Vue.use(Vuetify);
-const vuetify = new Vuetify(); 
+const vuetify = new Vuetify();
+
+export default new Vuetify({
+  theme: {
+    themes: {
+      light: {
+        primary: colors.red.darken1, // #E53935
+        secondary: colors.red.lighten4, // #FFCDD2
+        accent: colors.indigo.base, // #3F51B5
+      },
+    },
+  },
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({

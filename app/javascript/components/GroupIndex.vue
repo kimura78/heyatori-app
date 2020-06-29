@@ -1,10 +1,10 @@
 <template>
   <div class="group-index">
     <h2>グループ一覧</h2>
-    <div v-for="group in groups" :key="group.id">
-      {{ group.name }}
+    <p v-for="group in groups" :key="group.id">
+      <router-link :to="{ name: 'GroupShow', params: { id: group.id } }">{{ group.name }}</router-link>
     
-    </div>
+    </p>
   </div>
 
 </template>
