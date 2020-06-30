@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :groups, through: :invites
   has_many :invites, dependent: :destroy
   has_many :rooms
+  has_many :timetables
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

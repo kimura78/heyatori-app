@@ -28,31 +28,6 @@
     props: {
       day: '',
       groupId: ''
-    },
-    data: function () {
-      return {
-        room: {
-          name: '',
-          day: this.day,
-          group_id: this.groupId
-        },
-        errors: ''
-      }
-    },
-    methods: {
-      createRoom: function() {
-        axios
-          .post('/api/v1/rooms', this.room)
-          .then(response => {
-            window.location.reload()
-          })
-          .catch(error => {
-            console.error(error);
-            if (error.response.data && error.response.data.errors) {
-              this.errors = error.response.data.errors;
-            }
-          });
-      }
     }
   }
 </script>

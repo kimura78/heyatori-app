@@ -5,7 +5,8 @@ module Api
       before_action :set_timetable, only: [:update, :destroy]
 
       def index
-        timetables = Timetable.all
+        @room = Room.find(params[:room_id])
+        timetables = @room.timetables.order(:start_time)
         render json: timetables
       end
 
