@@ -16,7 +16,7 @@
       </v-col>
     </v-row>
 
-    <room-form :day="picker"/>
+    <room-form :day="picker" :groupId="this.groupId"/>
   </div>
 </template>
 
@@ -24,6 +24,7 @@
   import RoomForm from '../components/RoomForm.vue'
 
   export default {
+    props: ["groupId"],
     components: {
       RoomForm
     },

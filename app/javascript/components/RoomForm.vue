@@ -1,10 +1,8 @@
 <template>
   <div align="center">
     {{ this.day }}
-
+    {{ this.groupId }}
     <v-col cols="4">
-
-
       <v-form @submit.prevent="createRoom">
         
         <v-text-field
@@ -31,7 +29,10 @@
   import axios from 'axios';
 
   export default {
-    props: ["day"],
+    props: {
+      day: '',
+      groupId: ''
+    },
     data: function () {
       return {
         room: {

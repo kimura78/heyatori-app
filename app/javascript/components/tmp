@@ -1,3 +1,0 @@
-<div v-for="error in errors" :key="error">
-        <p class="text-danger">{{ error }}</p>
-      </div>
