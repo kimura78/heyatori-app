@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_125702) do
+ActiveRecord::Schema.define(version: 2020_06_30_232223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 2020_06_30_125702) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "timetable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["timetable_id"], name: "index_votes_on_timetable_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "groups", "users"
   add_foreign_key "invites", "groups"
   add_foreign_key "invites", "users"
@@ -79,4 +88,6 @@ ActiveRecord::Schema.define(version: 2020_06_30_125702) do
   add_foreign_key "rooms", "users"
   add_foreign_key "timetables", "rooms"
   add_foreign_key "timetables", "users"
+  add_foreign_key "votes", "timetables"
+  add_foreign_key "votes", "users"
 end
