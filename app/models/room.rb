@@ -3,5 +3,5 @@ class Room < ApplicationRecord
   validates :name, length: { maximum: 10 }
 
   belongs_to :user
-  belongs_to :group
+  # belongs_to :group
 end

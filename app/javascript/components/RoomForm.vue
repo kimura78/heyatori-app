@@ -37,7 +37,8 @@
       return {
         room: {
           name: '',
-          day: this.day
+          day: this.day,
+          group_id: this.groupId
         },
         errors: ''
       }

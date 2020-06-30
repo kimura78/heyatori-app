@@ -43,7 +43,7 @@ module Api
         end
 
         def room_params
-          params.require(:room).permit(:name, :day)
+          params.require(:room).permit(:name, :day, :user_id, :group_id)
         end
 
     end

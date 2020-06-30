@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_140343) do
+ActiveRecord::Schema.define(version: 2020_06_30_125702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 2020_06_29_140343) do
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
+  create_table "timetables", force: :cascade do |t|
+    t.string "start_time", default: "", null: false
+    t.string "end_time", default: "", null: false
+    t.bigint "room_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_timetables_on_room_id"
+    t.index ["user_id"], name: "index_timetables_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -66,4 +77,6 @@ ActiveRecord::Schema.define(version: 2020_06_29_140343) do
   add_foreign_key "invites", "users"
   add_foreign_key "rooms", "groups"
   add_foreign_key "rooms", "users"
+  add_foreign_key "timetables", "rooms"
+  add_foreign_key "timetables", "users"
 end
