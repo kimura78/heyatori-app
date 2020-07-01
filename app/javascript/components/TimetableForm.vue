@@ -12,9 +12,9 @@
       </v-col>
     </v-row>
 
-    <div v-for="error in errors" :key="error">
-      <p class="text-danger">{{ error }}</p>
-    </div>
+    <v-alert type="error" outlined dense class="mt-2"v-for="error in errors" :key="error">
+      {{ error }}
+    </v-alert>
 
     <v-btn  type="submit" color="success">作成する</v-btn>
 

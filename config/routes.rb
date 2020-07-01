@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :users
       resources :rooms
       resources :timetables
+      resources :votes
     end
   end
 end
