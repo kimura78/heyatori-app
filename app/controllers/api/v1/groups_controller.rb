@@ -19,6 +19,10 @@ module Api
         @group = Group.new(group_params)
         @group.user_id = current_user.id
         if @group.save
+          @invite = Invite.new
+          @invite.user_id = current_user.id
+          @invite.group_id = @group.id
+          @invite.save
           render json: @group, status: :created
         else
           render json: { errors: @group.errors.full_messages }, status: :unprocessable_entity

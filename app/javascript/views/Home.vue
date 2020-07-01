@@ -1,18 +1,19 @@
 <template>
   <v-app id="app">
-    <group-index/>
+    <a href="/users/sign_up">プロフィール変更</a>
+    <group-tabs/>
     <room-index/>
   </v-app>
 
 </template>
 
 <script>
-  import GroupIndex from '../components/GroupIndex.vue'
+  import GroupTabs from '../components/GroupTabs.vue'
   import RoomIndex from '../components/RoomIndex.vue'
 
   export default {
     components: {
-      GroupIndex,
+      GroupTabs,
       RoomIndex
     }
   }

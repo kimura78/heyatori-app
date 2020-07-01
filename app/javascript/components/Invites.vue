@@ -1,7 +1,6 @@
 <template>
   <div class="invite-index">
-
-    {{ this.day }}
+    <h1>ユーザー一覧</h1>
   
     <div v-for="invite in invites" :key="invite.id">
       <group-users :inviteId="invite.user_id"/> 

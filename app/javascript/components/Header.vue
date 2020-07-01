@@ -27,6 +27,8 @@
           </v-list-item-content>
         </v-list-item>
 
+        <group-index/>
+
         <v-list-item link>
           <v-list-item-action>
             <v-icon>mdi-email</v-icon>

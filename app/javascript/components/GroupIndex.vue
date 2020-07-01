@@ -1,32 +1,25 @@
 <template>
-  <v-tabs
-    fixed-tabs
-    background-color="indigo"
-    dark
-  >
-    <v-tab v-for="group in groups" :key="group.id">
-      {{ group.name }}
-    </v-tab>
-
-    <v-tab-item v-for="group in groups" :key="group.id">
-      <v-container fluid>
-        <day-select :groupId="group.id"/>
-      </v-container>
-    </v-tab-item>
-  </v-tabs>
-
-  
+  <div>
+    <div v-for="group in groups" :key="group.id">
+      <v-list-item link>
+        <v-list-item-action>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>
+            <router-link :to="{ name: 'GroupShow', params: { id: group.id } }">{{ group.name }}</router-link>
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item> 
+    </div>
+  </div>
 
 </template>
 
 <script>
   import axios from 'axios';
-  import DaySelect from '../components/DaySelect.vue'
 
   export default {
-    components: {
-      DaySelect
-    },
     data: function () {
       return {
         groups: []
