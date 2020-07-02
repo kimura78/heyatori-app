@@ -1,19 +1,39 @@
 <template>
   <v-app id="app">
-    <group-tabs/>
+    <div v-for="invite in invites" :key="invite.id">
+      <group-index :inviteId="invite.id"/>
+    </div>
+
+    <div v-if="invites === 'yet'">
+      <h1>Hello World!!</h1>
+      <p>まずはグループを作成しましょう</p>
+      <router-link :to="{ name: 'GroupNew'}">グループ作成</router-link>
+    </div>
+
     <room-index/>
   </v-app>
 
 </template>
 
 <script>
-  import GroupTabs from '../components/GroupTabs.vue'
+  import axios from 'axios'
+  import GroupIndex from '../components/GroupIndex.vue'
   import RoomIndex from '../components/RoomIndex.vue'
 
   export default {
     components: {
-      GroupTabs,
+      GroupIndex,
       RoomIndex
+    },
+    data: function () {
+      return {
+        invites: []
+      }
+    },
+    mounted () {
+      axios
+        .get(`/api/v1/invites/0.json`)
+        .then(response => (this.invites = response.data))
     }
   }
 </script>

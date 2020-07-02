@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import axios from 'axios';
+  import axios from 'axios'
   import GroupUsers from '../components/GroupUsers.vue'
 
   export default {

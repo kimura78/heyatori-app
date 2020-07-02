@@ -14,8 +14,11 @@ module Api
           invites = Invite.where(user_id: current_user.id)
           if invites.empty?
             invites = "yet"
-            render json: invites
           end
+          render json: invites
+        else
+          @invite = Invite.find(params[:id])
+          render json: @invite
         end
       end
 

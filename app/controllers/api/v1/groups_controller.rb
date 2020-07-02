@@ -6,8 +6,7 @@ module Api
 
 
       def index
-        # groups = Group.where(user_id: current_user.id)
-        groups = Group.all
+        groups = Group.where(id: params[:id])
         render json: groups
       end
 
