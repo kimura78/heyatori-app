@@ -1,6 +1,5 @@
 <template>
   <v-app id="app">
-    <a href="/users/sign_up">プロフィール変更</a>
     <group-tabs/>
     <room-index/>
   </v-app>
