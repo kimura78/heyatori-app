@@ -1,0 +1,59 @@
+<template>
+  <div>
+    {{ rooms }}
+    <v-row
+      justify="space-around"
+      align="center"
+    >
+      <v-col cols="12" sm="6" class="my-2 px-1">
+        <v-date-picker
+        v-model="picker"
+        color="green lighten-1"
+        header-color="blue-grey darken-1"
+        year-icon="mdi-calendar-blank"
+        elevation="15"
+        full-width
+        ></v-date-picker>
+      </v-col>
+    </v-row>
+
+    <room-form :day="picker" :groupId="this.groupId"/>
+    <room-index :day="picker" :groupId="this.groupId"/>
+
+  </div>
+</template>
+
+<script>
+  import RoomForm from '../components/RoomForm.vue'
+  import RoomIndex from '../components/RoomIndex.vue'
+
+  export default {
+    props: ["groupId"],
+    components: {
+      RoomForm,
+      RoomIndex
+    },
+    data: function () {
+      return {
+        rooms: []
+      }
+    },
+    mounted () {
+      axios
+        .get(`/api/v1/rooms.json`, {
+          params: {
+            id: this.groupId
+          }
+        })
+        .then(response => (this.rooms = response.data))
+    },
+    data () {
+      return {
+        picker: new Date().toISOString().substr(0, 10),
+      }
+    },
+  }
+</script>
+
+<style>
+</style>

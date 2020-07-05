@@ -5,7 +5,7 @@ module Api
       before_action :set_room, only: [ :update, :destroy ]
 
       def index
-        rooms = Room.all
+        rooms = Room.where(group_id: params[:id])
         render json: rooms
       end
 

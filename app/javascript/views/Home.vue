@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" class="mt-5">
     <div v-for="invite in invites" :key="invite.id">
       <group-index :inviteId="invite.id"/>
     </div>
@@ -9,21 +9,16 @@
       <p>まずはグループを作成しましょう</p>
       <router-link :to="{ name: 'GroupNew'}">グループ作成</router-link>
     </div>
-
-    <room-index/>
   </v-app>
-
 </template>
 
 <script>
   import axios from 'axios'
   import GroupIndex from '../components/GroupIndex.vue'
-  import RoomIndex from '../components/RoomIndex.vue'
 
   export default {
     components: {
       GroupIndex,
-      RoomIndex
     },
     data: function () {
       return {
