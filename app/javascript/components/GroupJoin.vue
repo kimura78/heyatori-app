@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent='joinGroup'>
+    <form @submit.prevent="joinGroup">
 
       <div v-for="error in errors" :key="error">
         <p class="text-danger">{{ error }}</p>

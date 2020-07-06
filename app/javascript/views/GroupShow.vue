@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div align="center">
     <p>{{ group.name }}</p>
 
     <group-join/>

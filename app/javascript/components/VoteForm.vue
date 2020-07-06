@@ -1,8 +1,10 @@
 <template>
   <div>
     <v-btn
+      v-if="votes === 'yet'"
       outlined
       color="light-green darken-4"
+      class="ml-3"
       @click="createVote"
     >投票
     </v-btn>
@@ -20,18 +22,28 @@
     props: ['timetableId'],
     data: function () {
       return {
+        votes: [],
         vote: {
           timetable_id: this.timetableId
         },
         errors: ''
       }
     },
+    mounted () {
+      axios
+        .get(`/api/v1/votes/0.json`, {
+          params: {
+            timetable_id: this.timetableId
+          }
+        })
+        .then(response => (this.votes = response.data))
+    },
     methods: {
       createVote: function() {
         axios
           .post('/api/v1/votes', this.vote)
           .then(response => {
-            this.$router.go({path: this.$router.currentRoute.path, force: true})
+            window.location.reload()
           })
           .catch(error => {
             console.error(error);

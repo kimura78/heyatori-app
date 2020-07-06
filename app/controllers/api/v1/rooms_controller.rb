@@ -6,6 +6,9 @@ module Api
 
       def index
         rooms = Room.where(group_id: params[:id])
+        if params[:day]
+          rooms = rooms.where(day: params[:day])
+        end
         render json: rooms
       end
 

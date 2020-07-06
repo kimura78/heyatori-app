@@ -2,7 +2,7 @@ module Api
   module V1
     class VotesController < ApiController
       before_action :authenticate_user!
-      before_action :set_vote, only: [:show, :update, :destroy]
+      before_action :set_vote, only: [ :update, :destroy]
 
       def index
         votes = Vote.where(timetable_id: params[:id])
@@ -10,7 +10,17 @@ module Api
       end
 
       def show
-        render json: @vote
+        if params[:id] = 0
+          votes = Vote.where(timetable_id: params[:timetable_id])
+          votes = votes.where(user_id: current_user.id)
+          if votes.empty?
+            votes = "yet"
+          end
+          render json: votes
+        else
+          @vote = vote.find(params[:id])
+          render json: @vote
+        end
       end
 
       def create

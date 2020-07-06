@@ -1,23 +1,17 @@
 <template>
   <form @submit.prevent="createTimetable">
-
     <v-row justify="space-around" align="center">
-      <v-col >
-        <p>開始時間</p>
+      <v-col>
+        <v-subheader>タイムテーブルを追加</v-subheader>
         <input v-model="timetable.start_time" type="time">
-      </v-col>
-      <v-col >
-        <p>終了時間</p>
         <input v-model="timetable.end_time" type="time">
+        <v-btn small outlined color="indigo" type="submit">作成</v-btn>
       </v-col>
     </v-row>
 
     <v-alert type="error" outlined dense class="mt-2"v-for="error in errors" :key="error">
       {{ error }}
     </v-alert>
-
-    <v-btn  type="submit" color="success">作成する</v-btn>
-
   </form>
 </template>
 

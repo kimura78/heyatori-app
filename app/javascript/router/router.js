@@ -11,7 +11,7 @@ const routes = [
   { path: '/',  name: 'Home', component: Home },
   { path: '/groups/new', name: 'GroupNew', component: GroupNew },
   { path: '/groups/:id', name: 'GroupShow', component: GroupShow },
-  { path: '/rooms/:day', name: 'RoomIndex', component: RoomIndex, props: true },
+  { path: '/groups/:id/:day', name: 'RoomIndex', component: RoomIndex },
 ];
 
 export default new VueRouter({ routes });

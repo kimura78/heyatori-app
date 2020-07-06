@@ -17,7 +17,7 @@
       </v-col>
 
 
-      <router-link :to="{ name: 'RoomIndex', params: { day: picker, group_id: this.groupId } }">この日付にする</router-link>
+      <router-link :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">この日付にする</router-link>
     </v-row>
 
     

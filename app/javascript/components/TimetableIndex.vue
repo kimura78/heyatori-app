@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <p v-for="timetable in timetables" :key="timetable.id">
-      {{ timetable.start_time }}     ~      {{ timetable.end_time }}
+  <v-expansion-panels>
+    <v-expansion-panel v-for="timetable in timetables" :key="timetable.id">
+      <v-expansion-panel-header>
+        {{ timetable.start_time }} ~ {{ timetable.end_time }}
+      </v-expansion-panel-header>
 
-      <vote-form :timetableId="timetable.id"></vote-form>
-      <vote-index :timetableId="timetable.id"></vote-index>
+      <v-expansion-panel-content>
+        <vote-index :timetableId="timetable.id"></vote-index>
+        <vote-form :timetableId="timetable.id"></vote-form>
+      </v-expansion-panel-content>
 
-    </p>
-  </div>
+    </v-expansion-panel>
+  </v-expansion-panels>
+
 </template>
 
 <script>
-  import axios from 'axios';
+  import axios from 'axios'
   import VoteForm from '../components/VoteForm.vue'
   import VoteIndex from '../components/VoteIndex.vue'
 

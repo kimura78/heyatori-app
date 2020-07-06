@@ -1,7 +1,5 @@
 <template>
   <div align="center">
-    {{ this.day }}
-    {{ this.groupId }}
     <v-col cols="4">
       <v-form @submit.prevent="createRoom">
         

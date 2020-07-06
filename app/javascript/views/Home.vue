@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app" class="mt-5">
+  <v-app id="app" class="mt-5" align="center">
     <div v-for="invite in invites" :key="invite.id">
       <group-index :inviteId="invite.id"/>
     </div>

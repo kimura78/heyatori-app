@@ -1,22 +1,34 @@
 <template>
-  <div class="room-index">
-    <h2>ROOMINDEX</h2>
-    {{ this.day }}
-    {{ this.group_id }}
+  <div align="center">
+    <h2>{{ this.$route.params.day }}</h2>
+
+    <v-card v-for="room in rooms" :key="room.id" class="mx-auto mt-4" max-width="300" tile>
+      <v-subheader>{{ room.name }}</v-subheader>
+
+      <v-list>
+        <timetable-index :roomId="room.id"/>
+      </v-list>
+
+      <timetable-form :roomId="room.id"/>
+    </v-card>
+
+    <room-form :day="this.$route.params.day" :groupId="this.$route.params.id"/>
   </div>
 </template>
 
 <script>
   import axios from 'axios';
+  import RoomForm from '../components/RoomForm.vue'
   import TimetableForm from '../components/TimetableForm.vue'
   import TimetableIndex from '../components/TimetableIndex.vue'
 
   export default {
     props: {
       day: '',
-      group_id: ''
+      groupId: ''
     },
     components: {
+      RoomForm,
       TimetableForm,
       TimetableIndex
     },
@@ -29,8 +41,8 @@
       axios
         .get(`/api/v1/rooms.json`, {
           params: {
-            id: this.groupId,
-            day: this.day
+            id: this.$route.params.id,
+            day: this.$route.params.day
           }
         })
         .then(response => (this.rooms = response.data))
