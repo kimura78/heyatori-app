@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import GroupNew from '../views/GroupNew.vue'
 import GroupShow from '../views/GroupShow.vue'
 import RoomIndex from '../views/RoomIndex.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,7 @@ const routes = [
   { path: '/groups/new', name: 'GroupNew', component: GroupNew },
   { path: '/groups/:id', name: 'GroupShow', component: GroupShow },
   { path: '/groups/:id/:day', name: 'RoomIndex', component: RoomIndex },
+  { path: '/profile', name: 'Profile', component: Profile }
 ];
 
 export default new VueRouter({ routes });
