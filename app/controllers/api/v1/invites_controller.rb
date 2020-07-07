@@ -10,15 +10,19 @@ module Api
       end
 
       def show
-        if params[:id] = 0
+        if params[:id] == "0"
           invites = Invite.where(user_id: current_user.id)
           if invites.empty?
             invites = "yet"
           end
           render json: invites
         else
-          @invite = Invite.find(params[:id])
-          render json: @invite
+          invites = Invite.where(group_id: params[:id])
+          invites = invites.where(user_id: current_user.id)
+          if invites.empty?
+            invites = "yet"
+          end
+          render json: invites
         end
       end
 

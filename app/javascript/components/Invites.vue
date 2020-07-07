@@ -1,12 +1,11 @@
 <template>
-  <div class="invite-index">
-    <h1>ユーザー一覧</h1>
-  
-    <div v-for="invite in invites" :key="invite.id">
-      <group-users :inviteId="invite.user_id"/> 
-    </div>
+  <v-list subheader>
+    <v-subheader>参加者</v-subheader>  
+    <v-list-item　v-for="invite in invites" :key="invite.id">
+      <group-users :inviteId="invite.user_id"/>
+    </v-list-item>
+  </v-list>
 
-  </div>
 
 </template>
 

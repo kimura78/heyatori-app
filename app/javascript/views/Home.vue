@@ -1,7 +1,7 @@
 <template>
   <v-app id="app" class="mt-5" align="center">
     <div v-for="invite in invites" :key="invite.id">
-      <group-index :inviteId="invite.id"/>
+      <group-index :inviteId="invite.group_id"/>
     </div>
 
     <div v-if="invites === 'yet'">

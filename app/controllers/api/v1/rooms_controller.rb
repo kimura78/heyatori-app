@@ -15,6 +15,10 @@ module Api
       def create
         @room = Room.new(room_params)
         @room.user_id = current_user.id
+        @invite = Invite.new
+        @invite.user_id = current_user.id
+        @invite.group_id = @group.id
+        @invite.save
         if @room.save
           render json: @room, status: :created
         else

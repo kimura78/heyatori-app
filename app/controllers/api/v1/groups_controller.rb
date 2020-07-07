@@ -5,7 +5,7 @@ module Api
       before_action :set_group, only: [:show, :update, :destroy]
 
 
-      def index
+      def index 
         groups = Group.where(id: params[:id])
         render json: groups
       end

@@ -9,7 +9,7 @@ module Api
       end
 
       def show
-        if params[:id] = 0
+        if params[:id] == "0"
           user = current_user
           render json: user
         else

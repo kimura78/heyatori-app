@@ -1,26 +1,23 @@
 <template>
-  <div>
-    <v-row
-      justify="space-around"
-      align="center"
-    >
-      <v-col cols="12" sm="6" class="my-2 px-1">
-        <v-date-picker
-        v-model="picker"
-        :events="this.roomdays"
-        color="green lighten-1"
-        header-color="blue-grey darken-1"
-        year-icon="mdi-calendar-blank"
-        elevation="15"
-        full-width
-        ></v-date-picker>
-      </v-col>
+  <div align="center">
+    <v-col cols="12" sm="6" class="my-2 px-1">
+      <v-date-picker
+      v-model="picker"
+      :events="this.roomdays"
+      color="green lighten-1"
+      header-color="blue-grey darken-1"
+      year-icon="mdi-calendar-blank"
+      elevation="15"
+      full-width
+      ></v-date-picker>
+    </v-col>
 
-
-      <router-link :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">この日付にする</router-link>
-    </v-row>
-
-    
+    <v-btn class="ma-2" outlined color="indigo" :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">
+      この日付にする
+    </v-btn>
+    <v-btn class="ma-2" outlined color="indigo" :to="{ name: 'GroupShow', params: { id: this.groupId } }">
+      グループ詳細
+    </v-btn>
 
   </div>
 </template>

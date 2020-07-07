@@ -1,13 +1,12 @@
 <template>
   <div>
-    <form @submit.prevent="joinGroup">
+    <form @submit.prevent="joinGroup" v-if="invites === 'yet'">
 
       <div v-for="error in errors" :key="error">
         <p class="text-danger">{{ error }}</p>
       </div>
 
-
-      <v-btn v-if="invites === 'yet'"
+      <v-btn
       x-large color="success"
       dark type="submit"
       >参加する</v-btn>
@@ -32,11 +31,7 @@
     },
     mounted () {
       axios
-        .get(`/api/v1/invites/0.json`,{
-          params: {
-            id: this.$route.params.id
-          }
-        })
+        .get(`/api/v1/invites/${this.$route.params.id}.json`)
         .then(response => (this.invites = response.data))
     },
     methods: {

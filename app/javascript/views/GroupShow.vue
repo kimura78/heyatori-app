@@ -1,9 +1,15 @@
 <template>
   <div align="center">
-    <p>{{ group.name }}</p>
+    <v-card max-width="400" class="mx-auto">
+      <v-toolbar>
+        <v-toolbar-title>{{ group.name }}</v-toolbar-title>
+      </v-toolbar>
 
+      <invites/>
+    </v-card>
+     
     <group-join/>
-    <invites/>
+
   </div>
 </template>
 

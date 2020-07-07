@@ -1,8 +1,10 @@
 <template>
-  <div class="user-index">
+  <div>
     <div v-for="user in users" :key="user.id">
 
-      {{ user.name }}
+      <v-list-item-content>
+        <v-list-item-title v-text="user.name"></v-list-item-title>
+      </v-list-item-content>
     
     </div>
   </div>
@@ -23,7 +25,7 @@
       axios
         .get(`/api/v1/users.json`, {
           params: {
-          id: this.inviteId
+            id: this.inviteId
           }
         })
         .then(response => (this.users = response.data))

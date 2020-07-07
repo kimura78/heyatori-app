@@ -10,7 +10,7 @@ module Api
       end
 
       def show
-        if params[:id] = 0
+        if params[:id] == "0"
           votes = Vote.where(timetable_id: params[:timetable_id])
           votes = votes.where(user_id: current_user.id)
           if votes.empty?
