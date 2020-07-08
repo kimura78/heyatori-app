@@ -1,7 +1,8 @@
 <template>
   <div align="center">
     <v-card max-width="400" class="mx-auto">
-      <v-toolbar>
+      <v-toolbar color="orange lighten-1" dark>
+        <v-icon class="mr-4">mdi-account-multiple</v-icon>
         <v-toolbar-title>{{ group.name }}</v-toolbar-title>
       </v-toolbar>
 

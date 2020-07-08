@@ -2,7 +2,7 @@
   <div id="inspire">
     <v-navigation-drawer
       v-model="drawer"
-      color="blue-grey darken-1"
+      color="orange lighten-1"
       dark
       app
     >
@@ -30,7 +30,7 @@
 
     <v-app-bar
       app
-      color="blue-grey darken-1"
+      color="orange lighten-1"
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>

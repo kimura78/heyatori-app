@@ -1,14 +1,19 @@
 <template>
   <div>
-    <div v-for="user in users" :key="user.id">
+    <v-list-item v-for="user in users" :key="user.id">
+
+      <v-list-item-avatar>
+        <v-icon>
+          mdi-account
+        </v-icon>
+      </v-list-item-avatar>
 
       <v-list-item-content>
         <v-list-item-title v-text="user.name"></v-list-item-title>
       </v-list-item-content>
     
-    </div>
+    </v-list-item>
   </div>
-
 </template>
 
 <script>

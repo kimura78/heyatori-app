@@ -5,20 +5,19 @@
       v-model="picker"
       :events="this.roomdays"
       color="green lighten-1"
-      header-color="blue-grey darken-1"
+      header-color="orange lighten-1"
       year-icon="mdi-calendar-blank"
       elevation="15"
       full-width
       ></v-date-picker>
     </v-col>
 
-    <v-btn class="ma-2" outlined color="indigo" :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">
+    <v-btn class="ma-2" outlined color="orange lighten-1" :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">
       この日付にする
     </v-btn>
-    <v-btn class="ma-2" outlined color="indigo" :to="{ name: 'GroupShow', params: { id: this.groupId } }">
+    <v-btn class="ma-2" outlined color="orange lighten-1" :to="{ name: 'GroupShow', params: { id: this.groupId } }">
       グループ詳細
     </v-btn>
-
   </div>
 </template>
 

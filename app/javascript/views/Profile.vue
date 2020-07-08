@@ -8,12 +8,9 @@
         <span class="title ml-4 font-weight-light">{{ user.name }}</span>
       </v-card-title> 
       <v-card-text class="font-weight-bold">
-        <div class="mt-3">
-          <a href="/users/edit">ユーザー編集</a>
-        </div>
-        <div class="mt-3">
-          <a href="/users/sign_out" data-method="delete">ログアウト</a>
-        </div>
+        <a class="mr-3" href="/users/edit">ユーザー編集</a>
+        |
+        <a class="ml-3" href="/users/sign_out" data-method="delete">ログアウト</a>
       </v-card-text>
     </v-card>
 
