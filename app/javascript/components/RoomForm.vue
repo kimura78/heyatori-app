@@ -2,14 +2,17 @@
   <div align="center">
     <v-col cols="4">
       <v-form @submit.prevent="createRoom">
-        
-        <v-text-field v-model="room.name" :counter="10" label="部屋名"></v-text-field>
-
         <v-alert type="error" outlined dense class="mt-2"v-for="error in errors" :key="error">
           {{ error }}
         </v-alert>
+        
+        <v-text-field
+          v-model="room.name"
+          :counter="10"
+          label="部屋名">
+         </v-text-field>
 
-        <v-btn  type="submit"  color="orange lighten-1" outlined>部屋を作成する</v-btn>
+        <v-btn type="submit" color="orange lighten-1" outlined>部屋を作成する</v-btn>
       </v-form>
     </v-col>
   </div>

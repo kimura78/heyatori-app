@@ -1,15 +1,15 @@
 <template>
-  <v-app id="app" class="mt-5" align="center">
+  <div   align="center">
     <div v-for="invite in invites" :key="invite.id">
       <group-index :inviteId="invite.group_id"/>
     </div>
 
     <div v-if="invites === 'yet'">
       <h1>Hello World!!</h1>
-      <p>まずはグループを作成しましょう</p>
+      <p class="mt-5">まずはグループを作成しましょう</p>
       <router-link :to="{ name: 'GroupNew'}">グループ作成</router-link>
     </div>
-  </v-app>
+  </div>
 </template>
 
 <script>
