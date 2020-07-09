@@ -4,7 +4,7 @@
       <v-expansion-panel v-for="group in groups" :key="group.id">
         <v-expansion-panel-header>{{ group.name }}</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <day-select :groupId="group.id"/>
+          <day-select :groupId="group.id" :groupName="group.name"/>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>

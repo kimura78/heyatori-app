@@ -8,8 +8,8 @@
 
       <invites/>
     </v-card>
-     
     <group-join/>
+    <invite-dialog/>
 
   </div>
 </template>
@@ -18,15 +18,19 @@
   import axios from 'axios';
   import Invites from '../components/Invites.vue'
   import GroupJoin from '../components/GroupJoin.vue'
-
+  import InviteDialog from '../components/InviteDialog.vue'
+ 
   export default {
     components: {
       Invites,
-      GroupJoin
+      GroupJoin,
+      InviteDialog
     },
     data: function () {
       return {
-        group: []
+        dialog: false,
+        group: [],
+        decode_name: decodeURI(this.$route.params.name)
       }
     },
     mounted () {

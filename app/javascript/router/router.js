@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/',  name: 'Home', component: Home },
   { path: '/groups/new', name: 'GroupNew', component: GroupNew },
-  { path: '/groups/:id', name: 'GroupShow', component: GroupShow },
+  { path: '/groups/:id/:name', name: 'GroupShow', component: GroupShow },
   { path: '/groups/:id/:day', name: 'RoomIndex', component: RoomIndex },
   { path: '/profile', name: 'Profile', component: Profile }
 ];

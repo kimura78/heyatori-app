@@ -12,10 +12,19 @@
       ></v-date-picker>
     </v-col>
 
-    <v-btn class="ma-2" outlined color="orange lighten-1" :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">
+    <v-btn 
+    class="ma-2" 
+    outlined 
+    color="orange lighten-1" 
+    :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">
       この日付にする
     </v-btn>
-    <v-btn class="ma-2" outlined color="orange lighten-1" :to="{ name: 'GroupShow', params: { id: this.groupId } }">
+
+    <v-btn
+    class="ma-2" 
+    outlined 
+    color="orange lighten-1" 
+    :to="{ name: 'GroupShow', params: { id: this.groupId, name: encode_name } }">
       グループ詳細
     </v-btn>
   </div>
@@ -25,12 +34,16 @@
   import axios from 'axios'
 
   export default {
-    props: ["groupId"],
+    props: {
+      groupId: '',
+      groupName: ''
+    },
     data: function () {
       return {
         rooms: [],
         roomdays: [],
         picker: new Date().toISOString().substr(0, 10),
+        encode_name: encodeURI(this.groupName),
       }
     },
     mounted () {
