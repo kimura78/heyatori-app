@@ -1,10 +1,10 @@
 <template>
-  <v-dialog　v-model="dialog"　width="500" v-if="invites !== 'yet'">
+  <v-dialog　v-model="dialog"　width="400" v-if="invites !== 'yet'">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         class="mt-4"
-        outlined
-        color="orange lighten-1"
+        text
+        color="primary"
         v-bind="attrs"
         v-on="on"
       >ユーザーを招待するには
@@ -36,6 +36,7 @@
   export default {
     data: function () {
       return {
+        dialog: false,
         invites: [],
       }
     },

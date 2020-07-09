@@ -2,9 +2,7 @@
   <div align="center">
     <v-card class="mx-auto" max-width="400">
       <v-card-title>
-        <v-icon large>
-          mdi-account
-        </v-icon>
+        <v-icon large>mdi-account</v-icon>
         <span class="title ml-4 font-weight-light">{{ user.name }}</span>
       </v-card-title> 
       <v-card-text class="font-weight-bold">
