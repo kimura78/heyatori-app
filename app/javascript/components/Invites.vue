@@ -5,8 +5,6 @@
       <group-users :inviteId="invite.user_id"/>
     </v-list-item>
   </v-list>
-
-
 </template>
 
 <script>

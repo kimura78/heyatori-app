@@ -2,6 +2,7 @@
   <div align="center">
     <v-col cols="12" sm="6" class="my-2 px-1">
       <v-date-picker
+      class="my-2 px-1"
       v-model="picker"
       :events="this.roomdays"
       color="green lighten-1"

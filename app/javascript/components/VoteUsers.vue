@@ -1,12 +1,9 @@
 <template>
   <div class="user-index">
     <div v-for="user in users" :key="user.id">
-
       {{ user.name }}
-    
     </div>
   </div>
-
 </template>
 
 <script>

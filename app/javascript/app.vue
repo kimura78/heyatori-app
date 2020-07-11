@@ -2,11 +2,11 @@
   <v-app id="app">
     <Header/>
     <v-main>
-      <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center">
-          <v-col>
+      <v-container>
+        <v-row>
+          <v-col cols="12" sm="12" md="12" lg="12">
             <router-view/>
-          </v-col>
+          </v-col>  
         </v-row>
       </v-container>
     </v-main>

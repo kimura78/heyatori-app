@@ -1,5 +1,5 @@
 <template>
-  <div   align="center">
+  <div align="center">
     <div v-for="invite in invites" :key="invite.id">
       <group-index :inviteId="invite.group_id"/>
     </div>
