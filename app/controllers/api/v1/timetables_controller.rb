@@ -2,7 +2,7 @@ module Api
   module V1
     class TimetablesController < ApiController
       before_action :authenticate_user!
-      before_action :set_timetable, only: [:update, :destroy]
+      before_action :set_timetable, only: [:show, :update, :destroy]
 
       def index
         @room = Room.find(params[:room_id])
@@ -11,7 +11,9 @@ module Api
       end
 
       def show
-        timetables = Timetable.where(room_id: params[:id])
+        if @timetable.user_id == current_user.id
+          @timetable = "right"
+        end
         render json: @timetable
       end
 

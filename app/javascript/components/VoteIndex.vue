@@ -3,7 +3,7 @@
     <v-subheader v-for="vote in votes" :key="vote.id">
       投票者：
       <vote-users :voteId="vote.user_id"/>
-      <vote-delete-modal :voteId="vote.id"/>
+      <vote-delete-dialog :voteId="vote.id"/>
     </v-subheader>
   </div>
 </template>
@@ -11,12 +11,12 @@
 <script>
   import axios from 'axios';
   import VoteUsers from '../components/VoteUsers.vue';
-  import VoteDeleteModal from '../components/VoteDeleteModal.vue';
+  import VoteDeleteDialog from '../components/VoteDeleteDialog.vue';
 
   export default {
     components: {
       VoteUsers,
-      VoteDeleteModal
+      VoteDeleteDialog
     },
     props: ['timetableId'],
     data: function () {

@@ -3,6 +3,7 @@
     <v-expansion-panel v-for="timetable in timetables" :key="timetable.id">
       <v-expansion-panel-header>
         {{ timetable.start_time }} ~ {{ timetable.end_time }}
+        <timetable-dialog :timetableId="timetable.id"/>
       </v-expansion-panel-header>
 
       <v-expansion-panel-content>
@@ -19,12 +20,14 @@
   import axios from 'axios'
   import VoteForm from '../components/VoteForm.vue'
   import VoteIndex from '../components/VoteIndex.vue'
+  import TimetableDialog from '../components/TimetableDialog.vue'
 
   export default {
     props: ['roomId'],
     components: {
       VoteForm,
-      VoteIndex
+      VoteIndex,
+      TimetableDialog
     },
     data: function () {
       return {
