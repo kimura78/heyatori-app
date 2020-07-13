@@ -7,9 +7,37 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
+import Router from '../router/router.js'
+import Vuetify from "vuetify";
+import colors from 'vuetify/lib/util/colors'
+import "vuetify/dist/vuetify.min.css"; 
+import '@mdi/font/css/materialdesignicons.css'
+
+Vue.use(Vuetify);
+const vuetify = new Vuetify();
+
+export default new Vuetify({
+  theme: {
+    themes: {
+      light: {
+        primary: colors.red.darken1, // #E53935
+        secondary: colors.red.lighten4, // #FFCDD2
+        accent: colors.indigo.base, // #3F51B5
+      },
+    },
+  },
+  icons: {
+    iconfont: 'mdiSvg', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+  },
+  icons: {
+    iconfont: 'mdi', // default - only for display purposes
+  },
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
+    router: Router,
+    vuetify,
     render: h => h(App)
   }).$mount()
   document.body.appendChild(app.$el)
