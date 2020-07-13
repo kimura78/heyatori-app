@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   root to: 'home#index'
+  devise_for :users
+  devise_scope :user do
+    post 'users/guest_login', to: 'users/sessions#guest_login'
+  end
 
   namespace :api, {format: 'json'} do
     namespace :v1 do
