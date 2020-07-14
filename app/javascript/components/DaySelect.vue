@@ -16,7 +16,7 @@
     <v-btn 
     class="ma-2" 
     outlined 
-    color="orange lighten-1" 
+    color="primary" 
     :to="{ name: 'RoomIndex', params: { id: this.groupId, day: picker } }">
       この日付にする
     </v-btn>
@@ -24,7 +24,7 @@
     <v-btn
     class="ma-2" 
     outlined 
-    color="orange lighten-1" 
+    color="primary" 
     :to="{ name: 'GroupShow', params: { id: this.groupId, name: encode_name } }">
       グループ詳細
     </v-btn>

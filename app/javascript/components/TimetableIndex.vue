@@ -3,12 +3,12 @@
     <v-expansion-panel v-for="timetable in timetables" :key="timetable.id">
       <v-expansion-panel-header>
         {{ timetable.start_time }} ~ {{ timetable.end_time }}
-        <timetable-dialog :timetableId="timetable.id"/>
       </v-expansion-panel-header>
 
       <v-expansion-panel-content>
         <vote-index :timetableId="timetable.id"></vote-index>
         <vote-form :timetableId="timetable.id"></vote-form>
+        <timetable-dialog :timetableId="timetable.id"/>
       </v-expansion-panel-content>
 
     </v-expansion-panel>

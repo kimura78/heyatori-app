@@ -1,7 +1,7 @@
 <template>
   <v-dialog　v-model="dialog"　width="700">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn class="mt-4" color="primary" v-bind="attrs" v-on="on">タイムテーブルを追加</v-btn>
+      <v-btn text color="primary" v-bind="attrs" v-on="on">タイムテーブルを追加</v-btn>
     </template>
 
     <v-card>
@@ -13,12 +13,12 @@
         <v-card-text class="mt-3">
           <v-row justify="space-around" align="center">
             <v-col style="width: 320px; flex: 0 1 auto;">
-              <h4>開始時間:</h4>
-              <v-time-picker v-model="timetable.start_time" elevation="15"></v-time-picker>
+              <p>開始時間:</p>
+              <v-time-picker color="orange lighten-1" v-model="timetable.start_time" elevation="15"></v-time-picker>
             </v-col>
             <v-col style="width: 320px; flex: 0 1 auto;">
-              <h4>終了時間:</h4>
-              <v-time-picker v-model="timetable.end_time" elevation="15"></v-time-picker>
+              <p>終了時間:</p>
+              <v-time-picker color="orange lighten-1" v-model="timetable.end_time" elevation="15"></v-time-picker>
             </v-col>
           </v-row>
           <v-alert type="error" outlined dense class="mt-2"v-for="error in errors" :key="error">
@@ -30,8 +30,8 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn small outlined color="indigo" type="submit">作成</v-btn>
-          <v-btn color="primary" text @click="dialog = false">戻る</v-btn>
+          <v-btn small outlined color="primary" type="submit">作成</v-btn>
+          <v-btn text color="light-green darken-3" @click="dialog = false">戻る</v-btn>
         </v-card-actions>
       </form>
     </v-card>

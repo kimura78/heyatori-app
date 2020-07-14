@@ -14,7 +14,7 @@
           label="Name"
         ></v-text-field>
 
-        <v-btn type="submit" color="orange lighten-1" outlined>グループを作成する
+        <v-btn type="submit" color="primary" outlined>グループを作成する
         </v-btn>
       </v-form>
     </v-col>
