@@ -47,7 +47,8 @@
       user: [],
       menus: [
         { title: 'Home', icon: 'mdi-home', url: '/' },
-        { title: 'グループ作成', icon: 'mdi-account-multiple', url: '/groups/new' }
+        { title: '予約済みの部屋', icon: 'mdi-format-list-bulleted-square', url: '/reserved' },
+        { title: 'グループ作成', icon: 'mdi-plus', url: '/groups/new' }
       ],
       user_menu: {
         icon: 'mdi-account', url: '/profile'

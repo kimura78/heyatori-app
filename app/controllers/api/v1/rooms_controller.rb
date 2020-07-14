@@ -12,6 +12,11 @@ module Api
         render json: rooms
       end
 
+      def show
+        rooms = Room.where(id: params[:id])
+        render json: rooms
+      end
+
       def create
         @room = Room.new(room_params)
         @room.user_id = current_user.id

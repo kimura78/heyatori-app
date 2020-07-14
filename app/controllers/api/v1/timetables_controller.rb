@@ -5,8 +5,13 @@ module Api
       before_action :set_timetable, only: [:show, :update, :destroy]
 
       def index
-        @room = Room.find(params[:room_id])
-        timetables = @room.timetables.order(:start_time)
+        if params[:room_id]
+          @room = Room.find(params[:room_id])
+          timetables = @room.timetables.order(:start_time)
+        else
+          timetables = Timetable.where(id: params[:timetable_id])
+        end
+
         render json: timetables
       end
 
