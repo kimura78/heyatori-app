@@ -5,7 +5,7 @@
         <v-icon large>mdi-account</v-icon>
         <span class="title ml-4 font-weight-light">{{ user.name }}</span>
       </v-card-title> 
-      <v-card-text class="font-weight-bold">
+      <v-card-text>
         <a class="mr-3" href="/users/edit">ユーザー編集</a>
         |
         <a class="ml-3" href="/users/sign_out" data-method="delete">ログアウト</a>

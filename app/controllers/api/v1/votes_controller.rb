@@ -4,14 +4,13 @@ module Api
       before_action :authenticate_user!
 
       def index
-        votes = Vote.where(timetable_id: params[:id])
+        votes = Vote.where(user_id: current_user.id)
         render json: votes
       end
 
       def show
         if params[:id] == "0"
           votes = Vote.where(timetable_id: params[:timetable_id])
-          votes = votes.where(user_id: current_user.id)
           if votes.empty?
             votes = "yet"
           end

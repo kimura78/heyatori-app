@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-btn class="mx-2" dark icon color="error" @click.stop="dialog = true" v-if="timetables === 'right'">
-      <v-icon dark>mdi-minus</v-icon>
+    <v-btn color="primary"　text @click.stop="dialog = true" v-if="timetables === 'right'">
+      タイムテーブルを削除
     </v-btn>
     </v-btn>
     <v-dialog v-model="dialog" max-width="290">

@@ -11,7 +11,7 @@
         label="部屋名">
         </v-text-field>
 
-      <v-btn type="submit" color="orange lighten-1" outlined>部屋を作成する</v-btn>
+      <v-btn type="submit" color="primary" outlined>部屋を作成する</v-btn>
     </v-form>
   </v-col>
 </template>
