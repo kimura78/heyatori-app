@@ -8,9 +8,9 @@
 import Vue from 'vue'
 import App from '../app.vue'
 import Router from '../router/router.js'
-import Vuetify from "vuetify";
+import Vuetify from "vuetify"
 import colors from 'vuetify/lib/util/colors'
-import "vuetify/dist/vuetify.min.css"; 
+import "vuetify/dist/vuetify.min.css"
 import '@mdi/font/css/materialdesignicons.css'
 
 Vue.use(Vuetify);

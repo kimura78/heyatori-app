@@ -1,5 +1,5 @@
 <template>
-  <div align="center" class="mt-5">
+  <div align="center">
     <h4>グループ名を入力してください</h4>
 
     <v-col cols="12" sm="8" md="8" lg="4" class="text-center pt-5">

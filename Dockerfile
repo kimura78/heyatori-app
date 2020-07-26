@@ -7,6 +7,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   build-essential \
   libpq-dev \
   nodejs
+
+RUN yarn add @mdi/font -D
       
 RUN mkdir /myapp
 WORKDIR /myapp
