@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" sm="8" md="8" lg="4" class="text-center pt-5">
+  <v-col cols="12" sm="8" md="8" lg="4" class="text-center mt-5">
     <v-form @submit.prevent="createRoom">
       <v-alert type="error" outlined dense class="mt-2"v-for="error in errors" :key="error">
         {{ error }}

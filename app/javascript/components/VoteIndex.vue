@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-subheader v-for="vote in votes" :key="vote.id">
+    <v-subheader v-for="vote in votes" :key="vote.id" v-if="votes !== 'yet'">
       投票者：
       <vote-users :voteId="vote.user_id"/>
       <vote-delete-dialog :voteId="vote.id"/>
@@ -26,9 +26,9 @@
     },
     mounted () {
       axios
-        .get(`/api/v1/votes.json`, {
+        .get(`/api/v1/votes/0.json`, {
           params: {
-            id: this.timetableId
+            timetable_id: this.timetableId
           }
         })
         .then(response => (this.votes = response.data))

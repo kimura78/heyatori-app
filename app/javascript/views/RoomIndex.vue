@@ -2,7 +2,7 @@
   <div align="center">
     <p>{{ this.$route.params.day }}</p>
 
-    <v-card v-for="room in rooms" :key="room.id" class="mx-auto mt-4" max-width="300" tile>
+    <v-card v-for="room in rooms" :key="room.id" :elevation="5" class="mx-auto mt-8" max-width="300" tile>
       <v-subheader>{{ room.name }}</v-subheader>
 
       <v-list>
